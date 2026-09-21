@@ -189,6 +189,75 @@
 
         
         /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        nav {
+
+            background:
+                #050d1a;
+
+            border-bottom:
+                1px solid var(--border);
+
+            padding:
+                0 6%;
+        }
+
+
+        nav ul {
+
+            display: flex;
+
+            list-style: none;
+        }
+
+
+        nav a {
+
+            display: block;
+
+            color:
+                var(--text-dim);
+
+            text-decoration: none;
+
+            font-size: 11px;
+
+            letter-spacing: 1.5px;
+
+            padding:
+                15px 22px;
+
+            transition:
+                .2s;
+        }
+
+
+        nav a:hover {
+
+            color:
+                #ffffff;
+
+            background:
+                #102542;
+        }
+
+
+        nav a.active {
+
+            color:
+                #ffffff;
+
+            background:
+                #0c1b32;
+
+            border-bottom:
+                2px solid var(--gensec-blue);
+        }
+
+        
+        /* =====================================================
            MAIN
         ===================================================== */
 
@@ -539,7 +608,7 @@
             object-fit: cover;
 
             filter:
-                grayscale(100%)
+                grayscale(0%)
                 contrast(1.08);
 
             opacity: .92;
@@ -554,26 +623,8 @@
             opacity: 1;
 
             filter:
-                grayscale(100%)
+                grayscale(0%)
                 contrast(1.2);
-        }
-
-
-        .scanlines {
-
-            position: absolute;
-
-            inset: 0;
-
-            pointer-events: none;
-
-            background:
-                repeating-linear-gradient(
-                    to bottom,
-                    transparent 0px,
-                    transparent 3px,
-                    rgba(93, 143, 229, .035) 4px
-                );
         }
 
 
