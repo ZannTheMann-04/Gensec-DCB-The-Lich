@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SCP Foundation // Site-66</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #050505;
+            color: #d6d6d6;
+            font-family: "Courier New", monospace;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* CRT scanlines */
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background: repeating-linear-gradient(
+                to bottom,
+                rgba(255,255,255,0.025),
+                rgba(255,255,255,0.025) 1px,
+                transparent 1px,
+                transparent 4px
+            );
+            z-index: 10;
+        }
+
+        .terminal {
+            width: 90%;
+            max-width: 900px;
+            border: 1px solid #333;
+            background: #090909;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.08);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header {
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 50px;
+            text-align: left;
+        }
+
+        .header h1 {
+            font-size: 18px;
+            color: #eeeeee;
+            letter-spacing: 3px;
+        }
+
+        .header p {
+            margin-top: 8px;
+            font-size: 12px;
+            color: #777;
+        }
+
+        .warning {
+            color: #9b0000;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+
+        .site {
+            font-size: 48px;
+            letter-spacing: 8px;
+            color: #eeeeee;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255,255,255,0.15);
+        }
+
+        .subtitle {
+            color: #777;
+            font-size: 14px;
+            letter-spacing: 3px;
+            margin-bottom: 45px;
+        }
+
+        .access-button {
+            display: inline-block;
+            padding: 16px 35px;
+            border: 1px solid #555;
+            background: #0d0d0d;
+            color: #ddd;
+            text-decoration: none;
+            font-family: "Courier New", monospace;
+            font-size: 14px;
+            letter-spacing: 2px;
+            transition: 0.2s ease;
+        }
+
+        .access-button:hover {
+            background: #181818;
+            border-color: #aaa;
+            color: white;
+            box-shadow: 0 0 15px rgba(255,255,255,0.1);
+        }
+
+        .status {
+            margin-top: 50px;
+            border-top: 1px solid #222;
+            padding-top: 20px;
+            font-size: 11px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .online {
+            color: #777;
+        }
+
+        .cursor {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .terminal {
+                padding: 25px;
+            }
+
+            .site {
+                font-size: 32px;
+                letter-spacing: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="terminal">
+
+        <header class="header">
+            <h1>SCP FOUNDATION // SECURE NETWORK</h1>
+            <p>SITE-66 PERSONNEL DATABASE TERMINAL</p>
+        </header>
+
+        <div class="warning">
+            // AUTHORIZED PERSONNEL ONLY //
+        </div>
+
+        <h2 class="site">SITE-66</h2>
+
+        <p class="subtitle">
+            SECURE DATABASE ACCESS TERMINAL
+        </p>
+
+        <!-- BUTTON -->
+        <a href="personnel.html" class="access-button">
+            [ ACCESS DATABASE ]
+        </a>
+
+        <div class="status">
+            CONNECTION: <span class="online">SECURE</span><br>
+            NETWORK: SITE-66 INTERNAL<br>
+            DATABASE STATUS: ONLINE<br>
+            CLEARANCE VERIFICATION: REQUIRED<br>
+            TERMINAL ID: S66-GENSEC-01<br><br>
+
+            SYSTEM READY<span class="cursor">_</span>
+        </div>
+
+    </main>
+
+</body>
+</html>
