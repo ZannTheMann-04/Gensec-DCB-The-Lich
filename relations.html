@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SITE-66 // RIOS BELMONT // RELATIONS</title>
+
+    <style>
+
+        /* =====================================================
+           SITE-66 COLOR SYSTEM
+        ===================================================== */
+
+        :root {
+            --bg-main: #040a16;
+            --bg-panel: #081326;
+            --bg-card: #061020;
+            --bg-header: #0c1b32;
+
+            --border: #1b355c;
+
+            --gensec-blue: #326dcc;
+            --gensec-light: #5d8fe5;
+
+            --text-main: #d5e2f5;
+            --text-secondary: #8291a8;
+            --text-dim: #4e5d72;
+        }
+
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        /* =====================================================
+           BODY
+        ===================================================== */
+
+        body {
+
+            background:
+                linear-gradient(
+                    rgba(4, 10, 22, 0.97),
+                    rgba(4, 10, 22, 0.97)
+                ),
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 3px,
+                    rgba(80, 130, 220, 0.025) 4px
+                );
+
+            color: var(--text-main);
+
+            font-family:
+                "Segoe UI",
+                Arial,
+                sans-serif;
+
+            min-height: 100vh;
+        }
+
+
+        /* =====================================================
+           SECURITY BAR
+        ===================================================== */
+
+        .security-bar {
+
+            height: 5px;
+
+            background: var(--gensec-blue);
+
+            box-shadow:
+                0 0 18px
+                rgba(50, 109, 204, 0.65);
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        header {
+
+            background: #050d1a;
+
+            border-bottom:
+                1px solid var(--border);
+
+            padding:
+                18px 6%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+
+        .header-left {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 16px;
+        }
+
+
+        .gensec {
+
+            width: 65px;
+
+            height: 65px;
+
+            object-fit: contain;
+        }
+
+
+        .site-title {
+
+            color: #ffffff;
+
+            font-size: 18px;
+
+            font-weight: 600;
+
+            letter-spacing: 3px;
+        }
+
+
+        .site-subtitle {
+
+            color: var(--text-dim);
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+            margin-top: 5px;
+        }
+
+
+        .clearance {
+
+            border:
+                1px solid var(--gensec-blue);
+
+            color: var(--gensec-light);
+
+            padding:
+                9px 14px;
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        nav {
+
+            background: #050d1a;
+
+            border-bottom:
+                1px solid var(--border);
+
+            padding: 0 6%;
+        }
+
+
+        nav ul {
+
+            display: flex;
+
+            list-style: none;
+        }
+
+
+        nav a {
+
+            display: block;
+
+            color: var(--text-dim);
+
+            text-decoration: none;
+
+            font-size: 11px;
+
+            letter-spacing: 1.5px;
+
+            padding:
+                15px 22px;
+
+            transition:
+                0.2s;
+        }
+
+
+        nav a:hover {
+
+            color: #ffffff;
+
+            background: #102542;
+        }
+
+
+        nav a.active {
+
+            color: #ffffff;
+
+            background: #0c1b32;
+
+            border-bottom:
+                2px solid var(--gensec-blue);
+        }
+
+
+        /* =====================================================
+           MAIN CONTENT
+        ===================================================== */
+
+        main {
+
+            width: 88%;
+
+            max-width: 1150px;
+
+            margin:
+                45px auto 80px;
+        }
+
+
+        .classification {
+
+            color: var(--gensec-light);
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 8px;
+        }
+
+
+        h1 {
+
+            color: #f1f1f1;
+
+            font-size: 34px;
+
+            font-weight: 400;
+
+            letter-spacing: 1px;
+        }
+
+
+        .codename {
+
+            color: var(--gensec-light);
+
+            font-size: 13px;
+
+            margin-top: 5px;
+
+            letter-spacing: 2px;
+        }
+
+
+        .intro {
+
+            color: var(--text-secondary);
+
+            font-size: 13px;
+
+            line-height: 1.8;
+
+            max-width: 800px;
+
+            margin-top: 14px;
+        }
+
+
+        .divider {
+
+            width: 100%;
+
+            height: 1px;
+
+            background:
+                var(--border);
+
+            margin:
+                30px 0;
+        }
+
+
+        /* =====================================================
+           SECTIONS
+        ===================================================== */
+
+        .section {
+
+            border:
+                1px solid var(--border);
+
+            background:
+                var(--bg-panel);
+
+            margin-bottom: 25px;
+        }
+
+
+        .section-header {
+
+            background:
+                var(--bg-header);
+
+            border-bottom:
+                1px solid var(--border);
+
+            padding:
+                17px 22px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+        }
+
+
+        .section-number {
+
+            color:
+                var(--gensec-blue);
+
+            font-size: 11px;
+
+            font-weight: bold;
+        }
+
+
+        .section-header h2 {
+
+            color:
+                #e7e8ea;
+
+            font-size: 14px;
+
+            font-weight: 500;
+
+            letter-spacing: 2px;
+        }
+
+
+        .section-content {
+
+            padding: 25px;
+        }
+
+
+        /* =====================================================
+           OPINIONS
+        ===================================================== */
+
+        .opinion {
+
+            border-left:
+                3px solid var(--gensec-blue);
+
+            background:
+                var(--bg-card);
+
+            padding: 20px;
+
+            margin-bottom: 15px;
+
+            transition:
+                0.2s;
+        }
+
+
+        .opinion:hover {
+
+            border-left-color:
+                var(--gensec-light);
+
+            background:
+                #07162a;
+        }
+
+
+        .opinion:last-child {
+
+            margin-bottom: 0;
+        }
+
+
+        .opinion-title {
+
+            color:
+                var(--gensec-light);
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 9px;
+        }
+
+
+        .opinion p {
+
+            color:
+                #b9c7d9;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           COMMUNICATIONS
+        ===================================================== */
+
+        .communication {
+
+            background:
+                var(--bg-card);
+
+            border:
+                1px solid var(--border);
+
+            padding: 20px;
+
+            margin-bottom: 13px;
+        }
+
+
+        .communication:last-child {
+
+            margin-bottom: 0;
+        }
+
+
+        .communication-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            border-bottom:
+                1px solid #162b4b;
+
+            padding-bottom: 10px;
+
+            margin-bottom: 14px;
+        }
+
+
+        .communication-type {
+
+            color:
+                var(--gensec-light);
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+        }
+
+
+        .communication-status {
+
+            color:
+                var(--text-dim);
+
+            font-size: 9px;
+
+            letter-spacing: 1.5px;
+        }
+
+
+        .communication p {
+
+            color:
+                #aebbd0;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           RELATIONS
+        ===================================================== */
+
+        .relation {
+
+            background:
+                var(--bg-card);
+
+            border:
+                1px solid var(--border);
+
+            margin-bottom: 15px;
+
+            padding: 22px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            transition:
+                0.2s;
+        }
+
+
+        .relation:hover {
+
+            background:
+                #07162a;
+
+            border-color:
+                #28518c;
+        }
+
+
+        .relation::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 3px;
+
+            height: 100%;
+
+            background:
+                var(--gensec-blue);
+        }
+
+
+        .relation-name {
+
+            color:
+                #f0f0f0;
+
+            font-size: 17px;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 5px;
+        }
+
+
+        .relation-role {
+
+            color:
+                var(--gensec-light);
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 16px;
+        }
+
+
+        .relation-quote {
+
+            color:
+                #c0ccdc;
+
+            font-size: 14px;
+
+            font-style: italic;
+
+            line-height: 1.9;
+
+            padding-left: 5px;
+        }
+
+
+        .quote-mark {
+
+            color:
+                var(--gensec-blue);
+
+            font-size: 24px;
+
+            font-weight: bold;
+
+            vertical-align: top;
+
+            margin-right: 5px;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            border-top:
+                1px solid var(--border);
+
+            background:
+                #030812;
+
+            padding:
+                25px 6%;
+
+            color:
+                var(--text-dim);
+
+            font-size: 9px;
+
+            letter-spacing: 1.5px;
+        }
+
+
+        .footer-content {
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            display: flex;
+
+            justify-content: space-between;
+        }
+
+
+        .footer-warning {
+
+            color:
+                #64748a;
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 700px) {
+
+            header {
+
+                padding:
+                    15px 4%;
+            }
+
+
+            .gensec {
+
+                width: 50px;
+
+                height: 50px;
+            }
+
+
+            .site-title {
+
+                font-size: 14px;
+            }
+
+
+            .clearance {
+
+                display: none;
+            }
+
+
+            nav {
+
+                padding:
+                    0 3%;
+
+                overflow-x: auto;
+            }
+
+
+            nav ul {
+
+                min-width:
+                    max-content;
+            }
+
+
+            nav a {
+
+                padding:
+                    14px;
+            }
+
+
+            main {
+
+                width: 92%;
+
+                margin-top:
+                    30px;
+            }
+
+
+            h1 {
+
+                font-size: 27px;
+            }
+
+
+            .section-content {
+
+                padding:
+                    17px;
+            }
+
+
+            .footer-content {
+
+                flex-direction:
+                    column;
+
+                gap:
+                    10px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         TOP SECURITY BAR
+    ====================================================== -->
+
+    <div class="security-bar"></div>
+
+
+    <!-- =====================================================
+         SITE HEADER
+    ====================================================== -->
+
+    <header>
+
+        <div class="header-left">
+
+            <img
+                src="gensec.png"
+                alt="gensec Logo"
+                class="gensec"
+            >
+
+            <div>
+
+                <div class="site-title">
+                    SITE-66 // GENSEC
+                </div>
+
+                <div class="site-subtitle">
+                    PERSONNEL DATABASE
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="clearance">
+            CLEARANCE LEVEL 3
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    SITE-66
+                </a>
+            </li>
+
+            <li>
+                <a href="personnel.html">
+                    PERSONNEL
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="relations.html"
+                    class="active"
+                >
+                    RELATIONS
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main>
+
+
+        <div class="classification">
+            GENSEC DEPARTMENT LEADERSHIP // INTERNAL RECORD
+        </div>
+
+
+        <h1>
+            Rios Belmont
+        </h1>
+
+
+        <div class="codename">
+            1LT // "FELWINTER"
+        </div>
+
+
+        <p class="intro">
+
+            A list of Felwinter's known communication frequencies, opinions on select topics he has been vocal on,
+            private thoughts he has disclosed about those closest to him
+
+        </p>
+
+
+        <div class="divider"></div>
+
+
+        <!-- =====================================================
+             01 — OPINIONS
+        ====================================================== -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <span class="section-number">
+                    01
+                </span>
+
+                <h2>
+                    OPINIONS
+                </h2>
+
+            </div>
+
+
+            <div class="section-content">
+
+
+                <div class="opinion">
+
+                    <div class="opinion-title">
+                        GENERAL ASSESSMENT
+                    </div>
+
+                    <p>
+                        'Felwinter' is known for being exceptionally direct
+                        in expressing his opinions. He has little
+                        tolerance for unnecessary formalities and will
+                        frequently speak his mind regardless of rank or
+                        potential consequences.
+                    </p>
+
+                </div>
+
+
+                <div class="opinion">
+
+                    <div class="opinion-title">
+                        LEADERSHIP PHILOSOPHY
+                    </div>
+
+                    <p>
+                        His approach to leadership is heavily influenced
+                        by his own experiences. 'Felwinter' places considerable
+                        value on mentorship, loyalty, and proving oneself
+                        through action rather than words.
+                    </p>
+
+                </div>
+
+
+                <div class="opinion">
+
+                    <div class="opinion-title">
+                        PERSONAL BELIEFS
+                    </div>
+
+                    <p>
+                        He holds a general dislike for most D-Class and The Chaos Insurgency but holds hatred for a few reserved people or groups. 
+                        Those being D-Class Commander 'Micro', Internal Affairs, Sarkics. 
+                        He holds most of his fellow GENSEC in a good light along with Epsilon-11 "Nine-Tailed-Fox"
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             02 — COMMUNICATIONS
+        ====================================================== -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <span class="section-number">
+                    02
+                </span>
+
+                <h2>
+                    COMMUNICATIONS
+                </h2>
+
+            </div>
+
+
+            <div class="section-content">
+
+
+                <div class="communication">
+
+                    <div class="communication-header">
+
+                        <span class="communication-type">
+                            GENSEC // INTERNAL
+                        </span>
+
+                        <span class="communication-status">
+                            ACTIVE
+                        </span>
+
+                    </div>
+
+
+                    <p>
+                        Currently within 'Felwinter's radio, he has programed 'Kairos', 'Aquila', 'Mercer' 
+                        for frequencies that are Internal to GENSEC at this moment.
+                    </p>
+
+                </div>
+
+
+                <div class="communication">
+
+                    <div class="communication-header">
+
+                        <span class="communication-type">
+                            SITE-66 // PERSONNEL
+                        </span>
+
+                        <span class="communication-status">
+                            ACTIVE
+                        </span>
+
+                    </div>
+
+
+                    <p>
+                        'Felwinter' only has two other known frequencies input into his radio. 
+                        Those being 'Metzili' and 'Paracelsus'
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             03 — RELATIONS
+        ====================================================== -->
+
+        <section class="section">
+
+            <div class="section-header">
+
+                <span class="section-number">
+                    03
+                </span>
+
+                <h2>
+                    RELATIONS
+                </h2>
+
+            </div>
+
+
+            <div class="section-content">
+
+
+                <!-- HADES -->
+
+                <div class="relation">
+
+                    <div class="relation-name">
+                        "Hades"
+                    </div>
+
+                    <div class="relation-role">
+                        MENTOR // HIGHLY REGARDED
+                    </div>
+
+                    <div class="relation-quote">
+
+                        <span class="quote-mark">
+                            "
+                        </span>
+
+                        My mentor, the person who I look to for guidance.
+
+                    </div>
+
+                </div>
+
+
+                <!-- KAIROS -->
+
+                <div class="relation">
+
+                    <div class="relation-name">
+                        "Kairos"
+                    </div>
+
+                    <div class="relation-role">
+                        CLOSE FRIEND // TRUSTED ASSOCIATE
+                    </div>
+
+                    <div class="relation-quote">
+
+                        <span class="quote-mark">
+                            "
+                        </span>
+
+                        You've been at my side despite how hard I try
+                        and push you away... preciate it brother, one
+                        day we'll take a tour round Canada.
+
+                    </div>
+
+                </div>
+
+
+                <!-- AQUILA -->
+
+                <div class="relation">
+
+                    <div class="relation-name">
+                        "Aquila"
+                    </div>
+
+                    <div class="relation-role">
+                        MENTEE // GENSEC PERSONNEL
+                    </div>
+
+                    <div class="relation-quote">
+
+                        <span class="quote-mark">
+                            "
+                        </span>
+
+                        You remind me of me, a younger me who isn't as
+                        bitter. I'll mentor you best I can, kid. Look
+                        after Mercer, he'll be a great Co-Lead. Mentor
+                        him as I did you.
+
+                    </div>
+
+                </div>
+
+
+                <!-- MERCER -->
+
+                <div class="relation">
+
+                    <div class="relation-name">
+                        "Mercer"
+                    </div>
+
+                    <div class="relation-role">
+                        MENTEE // VANGUARD
+                    </div>
+
+                    <div class="relation-quote">
+
+                        <span class="quote-mark">
+                            "
+                        </span>
+
+                        You got a spark of tenacity, remind me of myself
+                        as well. Look after Aquila and he'll look after
+                        you. You'll be a great Vanguard Co-Lead and
+                        eventually Lead.
+
+                    </div>
+
+                </div>
+
+
+                <!-- METZILI -->
+
+                <div class="relation">
+
+                    <div class="relation-name">
+                        "Metzili"
+                    </div>
+
+                    <div class="relation-role">
+                        INDEBTED ALLY // HIGH TRUST
+                    </div>
+
+                    <div class="relation-quote">
+
+                        <span class="quote-mark">
+                            "
+                        </span>
+
+                        I owe you a life debt. You ever need anything
+                        at all, I've got your back. Thank you...
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+                SITE-66 // GENSEC DATABASE
+            </div>
+
+            <div class="footer-warning">
+                UNAUTHORIZED ACCESS WILL BE LOGGED
+            </div>
+
+        </div>
+
+    </footer>
+
+
+</body>
+</html>
